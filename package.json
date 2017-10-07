@@ -1,0 +1,12 @@
+{
+  "name": "cmm221",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jane32/cmm221.git",
+  "author": "jane32 <32585725+jane32@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.1",
+    "twig": "^1.10.5"
+  }
+}
