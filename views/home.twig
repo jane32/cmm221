@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- lang="__" คือการกำหนดภาษาหลักให้กลับเว็บไซต์ -->
-<head>
-	<meta charset="utf-8">
-	<title>CMM 19</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+{% extends 'layout/base.twig' %} 
+
+{% block stylesheet %}
 	<link rel="stylesheet" href="/assets/home.css">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
 	<header>
 	  <div class="has-text-centered">
 		<img src="/assets/images/logo.png" alt="" width="145" height="auto">
@@ -28,31 +25,21 @@
 		<section class="banner">
 			<div class="highlight">
 			  <div class="columns">
-			  	<div class="column highlight-item">
-			  	   		<h1> FarmDesign</h1>
-			  	</div>
+			  	<a class="column highlight-item" style="background-image: url({{highlight.url}});">
+
+			  	   		<h1>{{ highlight.title }}</h1>
+			  	</a>
 			  </div> 
 			</div>
 
 
 			<div class="thumbnail">
 		   	<div class="columns is-marginless">
-		   	 <div class="column thumbnail-item is-paddingless
-		   	 has-text-centered" style="background-image:url(/assets/images/home/banner/thumbnail-1.jpg);">
-		   	 Lorem ipsum dolor sit amet.
-		  	  </div>
-		  	  		   	 <div class="column thumbnail-item is-paddingless
-		  	  		   	has-text-centered" style="background-image:url(/assets/images/home/banner/thumbnail-2.jpg);">
-						Lorem ipsum dolor sit amet.
-		  	  </div> 
-		  	  		   	 <div class="column thumbnail-item is-paddingless
-		  	  		   	has-text-centered" style="background-image:url(/assets/images/home/banner/thumbnail-3.jpg);">
-		  	  		   	Lorem ipsum dolor sit amet.
-		  	  </div> 
-		  	  		   	 <div class="column thumbnail-item is-paddingless
-		  	  		   	 has-text-centered" style="background-image:url(/assets/images/home/banner/thumbnail-4.jpg);">
-		  	  		   	 Lorem ipsum dolor sit amet. 	
-		  	  </div> 		   		
+		   	 {% for item in thumbnail %}			
+		   	 			<a href="#" class="column thumbnail-item" style="background-image:url({{ item.url }});">
+		   	 			 {{ item.title }}
+		  	  			</a>		 	
+		  	  {% endfor %} 		   		
 		   	</div>
 		   </div>
 		
@@ -188,5 +175,4 @@
 			</div>
 		</section>>
 	</main>
-</body>
-</html>	
+{% endblock %}
